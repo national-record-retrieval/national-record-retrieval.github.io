@@ -8,7 +8,7 @@
 
 > <h2> Docrio SDK Installation  </h2>
 
-**This step must be completed before NRR Install can begin.** <a href='http://localhost:56576/#/docrio_sdk'>Link to SDK</a>
+**This step must be completed before NRR Install can begin.** <a href='http://develop.nationalrr.com/#/docrio_sdk'>Link to SDK</a>
 
 > <h2> Install NRR Litify Docrio Integration </h2>
 
@@ -16,7 +16,7 @@
 
 _Note: If you are installing into a sandbox organization you must replace the initial portion of the URL with: http://test.salesforce.com_
 
-  <img src='/images/NRR Docrio 1.jpg'>
+  <img src='/images/docrio_installation/NRR Docrio 1.jpg'>
 
 > <h2> Custom Settings </h2>
 
@@ -25,9 +25,9 @@ _Note: If you are installing into a sandbox organization you must replace the in
 3.  Click Manage, and then the New Button
 4.  Fill in all the settings, they are required to send requests to NRR.
 5.  Location: N/A
-6.  Client ID: Contact Lisa Elkins
-7.  Client Key: Contact Lisa Elkins
-8.  NRR Account Email: Contact Lisa Elkins
+6.  Client ID: _Contact Lisa Elkins for this info_
+7.  Client Key: _Contact Lisa Elkins for this info_
+8.  NRR Account Email: _Contact Lisa Elkins for this info_
 9.  The endpoint is: https://nationalrr.com/api/index_upgrade.php
 10. Click checkbox for Associate with Matter if records should be returned to the Matter
 11. Check the NRR Use User email ID box to allow individual users to make requests
@@ -41,20 +41,20 @@ _Note: If you are installing into a sandbox organization you must replace the in
 19. Do not check Auto Send Request To NRR on Create
 20. Save and continue to the next step of installation
 
-<img src='/images/Custom Settings 1.jpg'>
+<img src='/images/docrio_installation/Custom Settings 1.jpg'>
 <br>
 <br>
-<img src='/images/Custom Settings 2.jpg'>
+<img src='/images/docrio_installation/Custom Settings 2.jpg'>
 
 **Example setup:**
 
-<img src='/images/Custom Settings 3.jpg'>
+<img src='/images/docrio_installation/Custom Settings 3.jpg'>
 
 > <h2> Add Remote Site settings for the NRR endpoint </h2>
 
 **This is needed to confirm with Salesforce that you want to allow API calls to NRR.**
 
-<img src='/images/Remote Site Settings 1.jpg'>
+<img src='/images/docrio_installation/Remote Site Settings 1.jpg'>
 
 > <h2> Put page layout setup for profiles </h2>
 
@@ -66,27 +66,27 @@ _Note: If you are installing into a sandbox organization you must replace the in
 
 Example:
 <br>
-<img src='/images/Page Layout 1.jpg'>
+<img src='/images/docrio_installation/Page Layout 1.jpg'>
 
 Before layout setup:
 <br>
-<img src='/images/Page Layout 2.jpg'>
+<img src='/images/docrio_installation/Page Layout 2.jpg'>
 
 After layout setup:
 <br>
-<img src='/images/Page Layout 3.jpg'>
+<img src='/images/docrio_installation/Page Layout 3.jpg'>
 
 <h2> Adding Lighting Component Request Page – To Search NRR for Providers </h2>
 
 1. **On Request Object Manager page, select Buttons, Links and Actions**
    <br>
-   <img src='/images/Lighting Component 1.jpg'>
+   <img src='/images/docrio_installation/Lighting Component 1.jpg'>
 2. **Type ‘New’ into the Quick Find box**
    <br>
 3. **Click on the arrow and select ‘Edit’**
    <br>
-   <img src='/images/Lighting Component 2.jpg'>
+   <img src='/images/docrio_installation/Lighting Component 2.jpg'>
 4. **On the section Lighting Experience Override: select _‘Lighting Component’_ option and select _‘NRRLitifyDocrio:requestAuraComponent’_ page**
    <br>
-   <img src='/images/Lighting Component 3.jpg'>
+   <img src='/images/docrio_installation/Lighting Component 3.jpg'>
 5. **Click Save**

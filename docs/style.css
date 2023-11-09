@@ -1,0 +1,31 @@
+.red {
+  color: red;
+}
+
+.large {
+  font-size: 20px;
+}
+
+.nrr_logo {
+  width: 15vw;
+}
+
+.container {
+  width: 800px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 2 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 36px;
+  border: 1px solid navy;
+}
+
+.litify {
+  grid-column: 1;
+  justify-self: center;
+}
+
+.API {
+  grid-column: 3;
+  justify-self: center;
+}
