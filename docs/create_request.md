@@ -1,8 +1,8 @@
 <center><h1>Creating a Medical Records Request</h1></center>
 
 > <h2> Methods:</h2>
-> <h4> <a href='http://developer.nationalrr.com/#/create_request?id=matters_tab'>Request from the Matters Tab<a> </h4>
-> <h4> <a href='http://developer.nationalrr.com/#/create_request?id=requests_tab'>Request from the Requests Tab</a> </h4>
+> <h3> <a href='http://developer.nationalrr.com/#/create_request?id=matters_tab'>Request from the Matters Tab<a> </h3>
+> <h3> <a href='http://developer.nationalrr.com/#/create_request?id=requests_tab'>Request from the Requests Tab</a> </h3>
 
 <h2 id='matters_tab'>Requesting from the Matters Tab</h2>
 
@@ -20,7 +20,7 @@
 
    <img src='/images/create_request/Create Request From Matters 4.png'>
 
-5. **Fill the form and click on the '<span class='red'>Next</span>' button**
+5. **<Fill the form and click on the '<span class='red'>Next</span>' button**
 
    <img src='/images/create_request/Create Request From Matters 5.png'>
 
@@ -39,21 +39,20 @@
    <li>NRR Patient Notes</li>
 </ul>
 
-**EX: Example of a valid filled page where <span class='red'>NRR All Dates</span> is toggled ON**
+- **EX: Example of a valid filled page where <span class='red'>NRR All Dates</span> is toggled ON**
 
    <img src='/images/create_request/Create Request From Matters 7.png'>
 
-**EX: Example of a valid filled page where <span class='red'>NRR All Dates</span> is toggled OFF**
+- **EX: Example of a valid filled page where <span class='red'>NRR All Dates</span> is toggled OFF**
 
    <img src='/images/create_request/Create Request From Matters 8.png'>
 
 7. **Click on the <span class='red'>Next</span> button**
 
 8. **If the Custom Setting named <span class='red'>is_Provider</span> is FALSE:**
-
    - Search Type <span class='red'>LITIFY / NRR</span> will be visible
    - <span class='red'>Facility (Party)</span> will be visible
-     - The next screen will appear as follows and you may use the above features to search Litify or NRR's provider database for your target provider
+   - The next screen will appear as follows and you may use the above features to search Litify or NRR's provider database for your target provider
 
 <img src='/images/create_request/Create Request From Matters 9.png'>
 
@@ -65,7 +64,7 @@
 
 <img src='/images/create_request/Create Request From Matters 10.png'>
 
-Manual Provider Entry Page:
+- **<p>Manual Provider Entry Page:</p>**
 
    <img src='/images/create_request/Create Request From Matters 11.png'>
 
@@ -75,7 +74,7 @@ Manual Provider Entry Page:
 
    <img src='/images/create_request/Create Request From Matters 13.png'>
 
-**Otherwise, you may leave it toggled OFF and select the <span class='red'>SAVE</span> button.**
+- **Otherwise, you may leave it toggled OFF and select the <span class='red'>SAVE</span> button.**
 
    <img src='/images/create_request/Create Request From Matters 12.png'>
 
@@ -97,4 +96,4 @@ Manual Provider Entry Page:
 
    <img src='/images/create_request/Create Request From Requests 2.png'>
 
-3. **All remaining steps are identical to creating a request from the Matters tab. Click <span class='large'><a href='http://develop.nationalrr.com/#/create_request?id=step6'>HERE</a></span> to go to the next relevant step.**
+3. **All remaining steps are identical to creating a request from the Matters tab. Click <span class='large'><a href='http://developer.nationalrr.com/#/create_request?id=step6'>HERE</a></span> to go to the next relevant step.**

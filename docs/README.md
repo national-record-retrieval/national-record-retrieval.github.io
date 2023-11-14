@@ -19,13 +19,11 @@
 </div>
 
 <div class='API'>
-<h4><a>API Endpoint Documentation<a></h4>
+<h4><a>API Endpoint Documentation</a></h4>
 
-- <a href='#'>Endpoint A<a>
+- <a href='https://developer.nationalrr.com/#/api_orders'>Record Retrieval Orders</a>
 
-- <a href='#'>Endpoint B<a>
-
-- <a href='#'>Endpoint C<a>
+- <a href='https://developer.nationalrr.com/#/api_reviews'>Record Reviews</a>
 
 </div>
 </div>
