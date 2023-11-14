@@ -1,9 +1,9 @@
-.red {
-  color: red;
+li {
+  font-size: 1.2rem;
 }
 
-.large {
-  font-size: 20px;
+.red {
+  color: red;
 }
 
 .nrr_logo {
@@ -28,4 +28,56 @@
 .API {
   grid-column: 3;
   justify-self: center;
+}
+
+.remove_link a {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+.api_container {
+  display: flex;
+  max-height: 1200px;
+  margin-bottom: 1rem;
+}
+
+.left_title {
+  width: 60%;
+  border-left: 4px solid #42b983;
+}
+
+.right_title {
+  width: 40%;
+  border-right: 4px solid #42b983;
+}
+
+.left_title::before,
+.right_title::before {
+  content: "\00a0 \00a0 \00a0 \00a0 ";
+}
+
+.api_payload,
+.api_response {
+  justify-self: left;
+  margin-left: 2.4rem;
+  background-color: #f8f8f8;
+  padding-right: 0.5rem;
+  width: 40%;
+  text-wrap: nowrap;
+  overflow: scroll;
+}
+
+.api_schema {
+  justify-self: left;
+  background-color: #f8f8f8;
+  padding-right: 0.5rem;
+  width: 60%;
+  overflow: scroll;
+}
+
+.api_container .api_response code,
+.api_container .api_schema code,
+.api_container .api_payload code {
+  color: #000080;
 }
