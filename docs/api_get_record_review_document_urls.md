@@ -80,36 +80,39 @@
     },
     "payload": {
       "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "type": "object",
-            "properties": {
-              "document_id": {
-                "type": "string",
-                "example": 3392070
-              },
-              "presigned_url": {
-                "type": "object",
-                "properties": {
-                  "url": {
-                    "type": "string",
-                    "example": "https://nrr-documents-dev-east.s3-accelerate.amazonaws.com/url"
-                  },
-                  "expiration_minutes": {
-                    "type": "integer",
-                    "example": 20
-                  },
-                  "generated_time": {
-                    "type": "string",
-                    "example": "10-18-2023 01:38:40"
-                  }
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "document_id": {
+              "type": "string",
+              "example": 3392070
+            },
+            "documentName": {
+              "type": "string",
+              "example": "documentname.pdf",
+              "description": "name of associated file"
+            },
+            "presigned_url": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "example": "https://nrr-documents-dev-east.s3-accelerate.amazonaws.com/url"
+                },
+                "expiration_minutes": {
+                  "type": "integer",
+                  "example": 20
+                },
+                "generated_time": {
+                  "type": "string",
+                  "example": "10-18-2023 01:38:40"
                 }
               }
             }
           }
-        ]
-      }
+        }
+      ]
     },
     "messages": {
       "type": "array",
@@ -145,6 +148,7 @@
   "payload": [
     {
       "document_id": "3392070",
+      "documentName": "documentname.pdf"
       "presigned_url": {
         "url": "https://nrr-documents-dev-east.s3-accelerate.amazonaws.com/url",
         "expiration_minutes": 20,

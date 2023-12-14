@@ -132,39 +132,37 @@
     },
     "records": {
       "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "type": "object",
-            "properties": {
-              "fileName": {
-                "type": "string",
-                "example": "testfile.pdf"
-              },
-              "fileSize": {
-                "type": "integer",
-                "example": 1321
-              },
-              "base64": {
-                "type": "string",
-                "example": "@file/pdf;base64,base64"
-              }
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "fileName": {
+              "type": "string",
+              "example": "testfile.pdf"
             },
-            "required": ["fileName", "fileSize", "base64"]
+            "fileSize": {
+              "type": "integer",
+              "example": 1321
+            },
+            "base64": {
+              "type": "string",
+              "example": "@file/pdf;base64,base64"
+            }
           },
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "integer",
-                "example": 2293708,
-                "description": "document id"
-              }
-            },
-            "required": ["id"]
-          }
-        ]
-      }
+          "required": ["fileName", "fileSize", "base64"]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 2293708,
+              "description": "document id"
+            }
+          },
+          "required": ["id"]
+        }
+      ]
     },
     "api": {
       "type": "integer",

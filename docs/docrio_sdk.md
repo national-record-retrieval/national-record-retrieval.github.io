@@ -4,11 +4,11 @@
 
 > <h2> Prerequisites: </h2>
 
-- You will need a user account for the client with administrative setting on salesforce
-- Ensure the Litify package is installed and configured
-  - Latest Release Link: https://help.litify.com/hc/en-us/articles/360044776533-Latest-Releases
-- Ensure the Docrio package is installed and configured
-  - Latest Release Link: https://help.litify.com/hc/en-us/articles/360044776533-Latest-Releases
+-   You will need a user account for the client with administrative setting on salesforce
+-   Ensure the Litify package is installed and configured
+    -   Latest Release Link: https://help.litify.com/hc/en-us/articles/360044776533-Latest-Releases
+-   Ensure the Docrio package is installed and configured
+    -   Latest Release Link: https://help.litify.com/hc/en-us/articles/360044776533-Latest-Releases
 
 > <h2> Installation of SDK </h2>
 
@@ -20,7 +20,7 @@ After installing the package, configure the SDK as follows:
 
 1. **Visit the Docrio SDK tab in Salesforce (if the tab is not visible, you may need to enable it for your profile)**
 
-   <img class='image' src="/images/docrio_sdk/Docrio SDK 1.jpg"/>
+ <img class='image' src="/images/docrio_sdk/Docrio SDK 1.jpg"/>
 
 2. **Click the Start button. This will configure a Connected App in your Salesforce org. Connected apps take 10-30 minutes to fully configure so you may need to wait a bit for the next step to succeed.**
 

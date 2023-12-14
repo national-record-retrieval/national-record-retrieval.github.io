@@ -73,126 +73,66 @@
     <code>
 {
   "type": "array",
-  "items": {
-    "anyOf": [
-      {
-        "type": "object",
-        "properties": {
-          "provider": {
-            "type": "string",
-            "example": "provider name"
-          },
-          "title": {
-            "type": "string",
-            "example": "returned_file_name.pdf"
-          },
-          "provider_order_id": {
-            "type": "string",
-            "example": 944509
-          },
-          "medical": {
-            "type": "string",
-            "example": 1,
-            "description": "marked as medical document"
-          },
-          "lab": {
-            "type": "string",
-            "example": 0,
-            "description": "marked as lab document"
-          },
-          "xrays": {
-            "type": "string",
-            "example": 0,
-            "description": "marked as xrays document"
-          },
-          "bills": {
-            "type": "string",
-            "example": 0,
-            "description": "marked as billing document"
-          },
-          "provider_order_complete": {
-            "type": "string",
-            "example": 1
-          },
-          "presigned_url": {
-            "type": "object",
-            "properties": {
-              "url": {
-                "type": "string",
-                "example": "https://nrr-documents-dev-east.s3-accelerate.amazonaws.com/url"
-              },
-              "expiration_minutes": {
-                "type": "string",
-                "example": 20
-              },
-              "generated_time": {
-                "type": "string",
-                "example": "10-18-2023 09:51:50"
-              }
-            }
-          }
-        }
-      },
-      {
-        "type": "object",
-        "properties": {
-          "provider": {
-            "type": "string",
-            "example": "provider name"
-          },
-          "title": {
-            "type": "string",
-            "example": "returned_file_name_2.pdf"
-          },
-          "provider_order_id": {
-            "type": "string",
-            "example": 944509
-          },
-          "medical": {
-            "type": "string",
-            "example": 0,
-            "description": "marked as medical document"
-          },
-          "lab": {
-            "type": "string",
-            "example": 0,
-            "description": "marked as lab document"
-          },
-          "xrays": {
-            "type": "string",
-            "example": 0,
-            "description": "marked as xrays document"
-          },
-          "bills": {
-            "type": "string",
-            "example": 1,
-            "description": "marked as billing document"
-          },
-          "provider_order_complete": {
-            "type": "string",
-            "example": 1
-          },
-          "presigned_url": {
-            "type": "object",
-            "properties": {
-              "url": {
-                "type": "string",
-                "example": "https://nrr-documents-dev-east.s3-accelerate.amazonaws.com/another-url"
-              },
-              "expiration_minutes": {
-                "type": "string",
-                "example": 20
-              },
-              "generated_time": {
-                "type": "string",
-                "example": "10-18-2023 09:51:50"
-              }
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string",
+          "example": "provider name"
+        },
+        "title": {
+          "type": "string",
+          "example": "returned_file_name.pdf"
+        },
+        "provider_order_id": {
+          "type": "string",
+          "example": 944509
+        },
+        "medical": {
+          "type": "string",
+          "example": 1,
+          "description": "marked as medical document"
+        },
+        "lab": {
+          "type": "string",
+          "example": 0,
+          "description": "marked as lab document"
+        },
+        "xrays": {
+          "type": "string",
+          "example": 0,
+          "description": "marked as xrays document"
+        },
+        "bills": {
+          "type": "string",
+          "example": 0,
+          "description": "marked as billing document"
+        },
+        "provider_order_complete": {
+          "type": "string",
+          "example": 1
+        },
+        "presigned_url": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "example": "https://nrr-documents-dev-east.s3-accelerate.amazonaws.com/url"
+            },
+            "expiration_minutes": {
+              "type": "string",
+              "example": 20
+            },
+            "generated_time": {
+              "type": "string",
+              "example": "10-18-2023 09:51:50"
             }
           }
         }
       }
-    ]
-  }
+    }
+  ]
 }
     </code>
 

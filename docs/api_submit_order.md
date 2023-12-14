@@ -60,7 +60,7 @@
       "items": {
         "type": "array",
         "items": {
-          "anyOf": [
+          "allOf": [
             {
               "type": "string",
               "example": "Provider Name"
@@ -352,7 +352,7 @@
       "items": {
         "type": "array",
         "items": {
-          "anyOf": [
+          "allOf": [
             {
               "type": "string",
               "description": "File Name",

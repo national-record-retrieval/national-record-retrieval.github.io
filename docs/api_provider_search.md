@@ -61,201 +61,77 @@
   <div class='api_schema'>
     <code>
 {
-  "type": "object",
-  "properties": {
-    "success": {
-      "type": "boolean",
-      "example": true
-    },
-    "payload": {
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "example": 6232,
-                "description": "provider id"
-              },
-              "provider_name": {
-                "type": "string",
-                "example": "LabCorp Dallas"
-              },
-              "location_id": {
-                "type": "string",
-                "example": 3601,
-                "description": "provider_location id"
-              },
-              "provider_street": {
-                "type": "string",
-                "example": "7777 Forest Lane, Suite C350",
-                "description": "provider street address"
-              },
-              "provider_city": {
-                "type": "string",
-                "example": "Dallas"
-              },
-              "provider_state": {
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 2,
-                "example": "TX"
-              },
-              "provider_zip": {
-                "type": "string",
-                "minLength": 5,
-                "maxLength": 5,
-                "example": 75230
-              }
+    "type": "object",
+    "properties": {
+        "success": {
+            "type": "boolean",
+            "example": true
+        },
+        "payload": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": 6232,
+                        "description": "provider id"
+                    },
+                    "provider_name": {
+                        "type": "string",
+                        "example": "LabCorp Dallas"
+                    },
+                    "location_id": {
+                        "type": "string",
+                        "example": 3601,
+                        "description": "provider_location id"
+                    },
+                    "provider_street": {
+                        "type": "string",
+                        "example": "7777 Forest Lane, Suite C350",
+                        "description": "provider street address"
+                    },
+                    "provider_city": {
+                        "type": "string",
+                        "example": "Dallas"
+                    },
+                    "provider_state": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 2,
+                        "example": "TX"
+                    },
+                    "provider_zip": {
+                        "type": "string",
+                        "minLength": 5,
+                        "maxLength": 5,
+                        "example": 75230
+                    }
+                }
             }
-          },
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "example": 12103,
-                "description": "provider id"
-              },
-              "provider_name": {
-                "type": "string",
-                "example": "LabCorp Legal Department"
-              },
-              "location_id": {
-                "type": "string",
-                "example": 9553,
-                "description": "provider_location id"
-              },
-              "provider_street": {
-                "type": "string",
-                "example": "1144 Pinehurst Dr",
-                "description": "provider street address"
-              },
-              "provider_city": {
-                "type": "string",
-                "example": "Chapel Hill"
-              },
-              "provider_state": {
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 2,
-                "example": "NC"
-              },
-              "provider_zip": {
-                "type": "string",
-                "minLength": 5,
-                "maxLength": 5,
-                "example": 27517
-              }
-            }
-          },
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "example": 12110,
-                "description": "provider id"
-              },
-              "provider_name": {
-                "type": "string",
-                "example": "Labcorp - Sterling, VA"
-              },
-              "location_id": {
-                "type": "string",
-                "example": 9559,
-                "description": "provider_location id"
-              },
-              "provider_street": {
-                "type": "string",
-                "example": "47100 Community Plaza",
-                "description": "provider street address"
-              },
-              "provider_city": {
-                "type": "string",
-                "example": "Sterling"
-              },
-              "provider_state": {
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 2,
-                "example": "VA"
-              },
-              "provider_zip": {
-                "type": "string",
-                "minLength": 5,
-                "maxLength": 5,
-                "example": 20164
-              }
-            }
-          },
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "example": 12591,
-                "description": "provider id"
-              },
-              "provider_name": {
-                "type": "string",
-                "example": "Labcorp- Midlothian"
-              },
-              "location_id": {
-                "type": "string",
-                "example": 10054,
-                "description": "provider_location id"
-              },
-              "provider_street": {
-                "type": "string",
-                "example": "5610 West LaSalle Street",
-                "description": "provider street address"
-              },
-              "provider_city": {
-                "type": "string",
-                "example": "Tampa"
-              },
-              "provider_state": {
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 2,
-                "example": "FL"
-              },
-              "provider_zip": {
-                "type": "string",
-                "minLength": 5,
-                "maxLength": 5,
-                "example": 33607
-              }
-            }
-          }
-        ]
-      }
+        }
     },
     "messages": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
+        "type": "array",
+        "items": {
+            "type": "string"
+        },
+        "example": []
     },
     "warnings": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
+        "type": "array",
+        "items": {
+            "type": "string"
+        },
+        "example": []
     },
     "errors": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
+        "type": "array",
+        "items": {
+            "type": "string"
+        },
+        "example": []
     }
-  }
 }
     </code>
 
