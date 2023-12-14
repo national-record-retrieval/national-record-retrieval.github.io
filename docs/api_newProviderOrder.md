@@ -1,4 +1,4 @@
-<h1>ENDPOINT NAME</h1>
+<h1>newProviderOrder</h1>
 
 | <p>Path</p> | <p class='remove_link'>https://nationalrr.com/api/index.php</p> |
 | ----------- | --------------------------------------------------------------- |

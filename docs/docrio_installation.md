@@ -2,9 +2,9 @@
 
 > <h2> Prerequisites: </h2>
 
-- **User account used to install packages needs administrative rights**
-- **Litify PM (Version 29 or higher)**
-- **Docrio (Version 14.8 or higher)**
+-   **User account used to install packages needs administrative rights**
+-   **Litify PM (Version 29 or higher)**
+-   **Docrio (Version 14.8 or higher)**
 
 > <h2> Docrio SDK Installation  </h2>
 

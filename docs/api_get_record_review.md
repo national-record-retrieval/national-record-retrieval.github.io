@@ -133,137 +133,16 @@
             },
             "Products": {
               "type": "array",
-              "items": {
-                "anyOf": [
-                  {
-                    "type": "array",
-                    "items": {
-                      "anyOf": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "label": {
-                              "type": "string",
-                              "example": "Product Used"
-                            },
-                            "type": {
-                              "type": "string",
-                              "example": "text"
-                            },
-                            "field_name": {
-                              "type": "string",
-                              "example": "product_used"
-                            },
-                            "value": {
-                              "type": "string",
-                              "example": "Product Used Data"
-                            }
-                          }
-                        },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "label": {
-                              "type": "string",
-                              "example": "Product UPC"
-                            },
-                            "type": {
-                              "type": "string",
-                              "example": "text"
-                            },
-                            "field_name": {
-                              "type": "string",
-                              "example": "product_upc"
-                            },
-                            "value": {
-                              "type": "string",
-                              "example": "Product UPC data"
-                            }
-                          }
-                        },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "label": {
-                              "type": "string",
-                              "example": "Product Dosage"
-                            },
-                            "type": {
-                              "type": "string",
-                              "example": "text"
-                            },
-                            "field_name": {
-                              "type": "string",
-                              "example": "product_dosage"
-                            },
-                            "value": {
-                              "type": "string",
-                              "example": "product dosage data"
-                            }
-                          }
-                        },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "label": {
-                              "type": "string",
-                              "example": "Began Usage"
-                            },
-                            "type": {
-                              "type": "string",
-                              "example": "date"
-                            },
-                            "field_name": {
-                              "type": "string",
-                              "example": "began_usage"
-                            },
-                            "value": {
-                              "type": "string",
-                              "format": "date",
-                              "example": "2022-12-31T00:00:00.000Z"
-                            }
-                          }
-                        },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "label": {
-                              "type": "string",
-                              "example": "Ended Usage"
-                            },
-                            "type": {
-                              "type": "string",
-                              "example": "date"
-                            },
-                            "field_name": {
-                              "type": "string",
-                              "example": "ended_usage"
-                            },
-                            "value": {
-                              "type": "string",
-                              "format": "date",
-                              "example": "2023-12-31T00:00:00.000Z"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
-            },
-            "Outcomes": {
-              "type": "array",
-              "items": {
-                "type": "array",
-                "items": {
-                  "anyOf": [
+              "items": [
+                {
+                  "type": "array",
+                  "items": [
                     {
                       "type": "object",
                       "properties": {
                         "label": {
                           "type": "string",
-                          "example": "Outcome"
+                          "example": "Product Used"
                         },
                         "type": {
                           "type": "string",
@@ -271,101 +150,132 @@
                         },
                         "field_name": {
                           "type": "string",
-                          "example": "outcome"
+                          "example": "product_used"
                         },
                         "value": {
                           "type": "string",
-                          "example": "Outcome Data"
-                        }
-                      }
-                    },
-                    {
-                      "type": "object",
-                      "properties": {
-                        "label": {
-                          "type": "string",
-                          "example": "ICD code"
-                        },
-                        "type": {
-                          "type": "string",
-                          "example": "text"
-                        },
-                        "field_name": {
-                          "type": "string",
-                          "example": "icd_code"
-                        },
-                        "value": {
-                          "type": "string",
-                          "example": "ICD code Data"
-                        }
-                      }
-                    },
-                    {
-                      "type": "object",
-                      "properties": {
-                        "label": {
-                          "type": "string",
-                          "example": "Symptoms"
-                        },
-                        "type": {
-                          "type": "string",
-                          "example": "textarea"
-                        },
-                        "field_name": {
-                          "type": "string",
-                          "example": "symptoms"
-                        },
-                        "value": {
-                          "type": "string",
-                          "example": "Symptoms data"
+                          "example": "Product Used Data"
                         }
                       }
                     }
                   ]
                 }
+              ]
+            }
+          },
+          "Outcomes": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "example": "Outcome"
+                      },
+                      "type": {
+                        "type": "string",
+                        "example": "text"
+                      },
+                      "field_name": {
+                        "type": "string",
+                        "example": "outcome"
+                      },
+                      "value": {
+                        "type": "string",
+                        "example": "Outcome Data"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "example": "ICD code"
+                      },
+                      "type": {
+                        "type": "string",
+                        "example": "text"
+                      },
+                      "field_name": {
+                        "type": "string",
+                        "example": "icd_code"
+                      },
+                      "value": {
+                        "type": "string",
+                        "example": "ICD code Data"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "example": "Symptoms"
+                      },
+                      "type": {
+                        "type": "string",
+                        "example": "textarea"
+                      },
+                      "field_name": {
+                        "type": "string",
+                        "example": "symptoms"
+                      },
+                      "value": {
+                        "type": "string",
+                        "example": "Symptoms data"
+                      }
+                    }
+                  }
+                ]
               }
             }
           }
-        },
-        "id": {
-          "type": "string",
-          "example": 12364,
-          "description": "record review id"
-        },
-        "valid": {
-          "type": "string",
-          "example": null
-        },
-        "invalidFields": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "example": []
         }
+      },
+      "id": {
+        "type": "string",
+        "example": 12364,
+        "description": "record review id"
+      },
+      "valid": {
+        "type": "string",
+        "example": null
+      },
+      "invalidFields": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "example": []
       }
-    },
-    "message": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
-    },
-    "warnings": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
-    },
-    "errors": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
     }
+  },
+  "message": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "example": []
+  },
+  "warnings": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "example": []
+  },
+  "errors": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "example": []
   }
 }
     </code>

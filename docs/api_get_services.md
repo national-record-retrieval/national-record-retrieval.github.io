@@ -65,7 +65,7 @@
     "payload": {
       "type": "array",
       "items": {
-        "anyOf": [
+        "allOf": [
           {
             "type": "object",
             "properties": {

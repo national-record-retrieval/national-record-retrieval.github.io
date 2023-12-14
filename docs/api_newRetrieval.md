@@ -32,1452 +32,630 @@
       "properties": {
         "orders": {
           "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "patient_first": {
-                    "type": "string",
-                    "example": "Jane"
-                  },
-                  "patient_middle": {
-                    "type": "string",
-                    "example": "Elizabeth"
-                  },
-                  "patient_last": {
-                    "type": "string",
-                    "example": "Doe"
-                  },
-                  "patient_dob": {
-                    "type": "string",
-                    "format": "date",
-                    "example": "2001-02-01T00:00:00.000Z"
-                  },
-                  "patient_seen": {
-                    "type": "string",
-                    "example": "123-13-1234"
-                  },
-                  "case_number": {
-                    "type": "string",
-                    "example": 20200723
-                  },
-                  "notes": {
-                    "type": "string",
-                    "example": "This is a patient note"
-                  },
-                  "provider_orders": {
-                    "type": "array",
-                    "items": {
-                      "anyOf": [
-                        {
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "patient_first": {
+                  "type": "string",
+                  "example": "Jane"
+                },
+                "patient_middle": {
+                  "type": "string",
+                  "example": "Elizabeth"
+                },
+                "patient_last": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "patient_dob": {
+                  "type": "string",
+                  "format": "date",
+                  "example": "2001-02-01T00:00:00.000Z"
+                },
+                "patient_seen": {
+                  "type": "string",
+                  "example": "123-13-1234"
+                },
+                "case_number": {
+                  "type": "string",
+                  "example": 20200723
+                },
+                "notes": {
+                  "type": "string",
+                  "example": "This is a patient note"
+                },
+                "provider_orders": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "all_dates": {
+                          "type": "integer",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "example": 0
+                        },
+                        "service_start": {
+                          "type": "string",
+                          "format": "date",
+                          "example": "2001-01-01T00:00:00.000Z"
+                        },
+                        "service_end": {
+                          "type": "string",
+                          "format": "date",
+                          "example": "2023-01-01T00:00:00.000Z"
+                        },
+                        "provider_name": {
+                          "type": "string",
+                          "example": "My Provider Name"
+                        },
+                        "provider_address": {
+                          "type": "string",
+                          "example": "123 My Place, Peoria, IL 61605"
+                        },
+                        "certified_records": {
+                          "type": "integer",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "example": 1
+                        },
+                        "rush_order": {
+                          "type": "integer",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "example": 1
+                        },
+                        "notes": {
+                          "type": "string",
+                          "example": "This is a provider note"
+                        },
+                        "record_types": {
                           "type": "object",
                           "properties": {
-                            "all_dates": {
-                              "type": "integer",
-                              "maximum": 1,
-                              "minimum": 0,
-                              "example": 0
-                            },
-                            "service_start": {
-                              "type": "string",
-                              "format": "date",
-                              "example": "2001-01-01T00:00:00.000Z"
-                            },
-                            "service_end": {
-                              "type": "string",
-                              "format": "date",
-                              "example": "2023-01-01T00:00:00.000Z"
-                            },
-                            "provider_name": {
-                              "type": "string",
-                              "example": "My Provider Name"
-                            },
-                            "provider_address": {
-                              "type": "string",
-                              "example": "123 My Place, Peoria, IL 61605"
-                            },
-                            "certified_records": {
+                            "medical": {
                               "type": "integer",
                               "maximum": 1,
                               "minimum": 0,
                               "example": 1
                             },
-                            "rush_order": {
+                            "lab": {
                               "type": "integer",
                               "maximum": 1,
                               "minimum": 0,
                               "example": 1
                             },
-                            "notes": {
-                              "type": "string",
-                              "example": "This is a provider note"
+                            "xrays": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 1
                             },
-                            "record_types": {
-                              "type": "object",
-                              "properties": {
-                                "medical": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "lab": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "xrays": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "bills": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                }
-                              }
-                            },
-                            "medical_subtypes": {
-                              "type": "object",
-                              "properties": {
-                                "abstract_medical_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "admissions_face_sheet": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "ambulance_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "attending_physicians_statement": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "autopsy_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "anethesia_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "chart_stickers": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "consultation_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "discharge_summary": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "doctors_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "er_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "fetal_monitoring_strips": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "gastrointestinal_lab_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "history_physical_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "implant_explant_logs": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "intra_operative_nursing_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "laboratory_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "nurses_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "nurses_medication_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "office_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "operative_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "pathology_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "pharmacy_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "photographs": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "physical_therapy_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "preop_standing_orders": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "product_id_implant_label": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "psychiatric_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "radiology_diagnostic_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "recovery_room_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                }
-                              }
-                            },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "test.pdf"
-                                      },
-                                      "file_size": {
-                                        "type": "integer",
-                                        "example": 28900
-                                      },
-                                      "base_64": {
-                                        "type": "string",
-                                        "example": "data:@file/pdf;base64, base64"
-                                      },
-                                      "file_url": {
-                                        "type": "string",
-                                        "example": null
-                                      }
-                                    }
-                                  }
-                                ]
-                              }
+                            "bills": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 1
                             }
                           }
                         },
-                        {
+                        "medical_subtypes": {
                           "type": "object",
                           "properties": {
-                            "all_dates": {
+                            "abstract_medical_records": {
                               "type": "integer",
                               "maximum": 1,
                               "minimum": 0,
                               "example": 0
                             },
-                            "service_start": {
-                              "type": "string",
-                              "format": "date",
-                              "example": "2001-01-01T00:00:00.000Z"
-                            },
-                            "service_end": {
-                              "type": "string",
-                              "format": "date",
-                              "example": "2023-01-01T00:00:00.000Z"
-                            },
-                            "provider_name": {
-                              "type": "string",
-                              "example": "My Provider Name"
-                            },
-                            "provider_address": {
-                              "type": "string",
-                              "example": "123 My Place, Peoria, IL 61605"
-                            },
-                            "certified_records": {
-                              "type": "integer",
-                              "maximum": 1,
-                              "minimum": 0,
-                              "example": 1
-                            },
-                            "rush_order": {
-                              "type": "integer",
-                              "maximum": 1,
-                              "minimum": 0,
-                              "example": 1
-                            },
-                            "notes": {
-                              "type": "string",
-                              "example": "This is a provider note"
-                            },
-                            "record_types": {
-                              "type": "object",
-                              "properties": {
-                                "medical": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "lab": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "xrays": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "bills": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                }
-                              }
-                            },
-                            "medical_subtypes": {
-                              "type": "object",
-                              "properties": {
-                                "abstract_medical_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "admissions_face_sheet": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "ambulance_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "attending_physicians_statement": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "autopsy_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "anethesia_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "chart_stickers": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "consultation_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "discharge_summary": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "doctors_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "er_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "fetal_monitoring_strips": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "gastrointestinal_lab_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "history_physical_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "implant_explant_logs": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "intra_operative_nursing_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "laboratory_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "nurses_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "nurses_medication_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "office_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "operative_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "pathology_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "pharmacy_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "photographs": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "physical_therapy_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "preop_standing_orders": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "product_id_implant_label": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "psychiatric_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "radiology_diagnostic_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "recovery_room_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                }
-                              }
-                            },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "test.pdf"
-                                      },
-                                      "file_size": {
-                                        "type": "integer",
-                                        "example": 28900
-                                      },
-                                      "base_64": {
-                                        "type": "string",
-                                        "example": "data:@file/pdf;base64, base64"
-                                      },
-                                      "file_url": {
-                                        "type": "string",
-                                        "example": null
-                                      }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "patient_first": {
-                    "type": "string",
-                    "example": "Jane"
-                  },
-                  "patient_middle": {
-                    "type": "string",
-                    "example": "Elizabeth"
-                  },
-                  "patient_last": {
-                    "type": "string",
-                    "example": "Doe"
-                  },
-                  "patient_dob": {
-                    "type": "string",
-                    "format": "date",
-                    "example": "2001-02-01T00:00:00.000Z"
-                  },
-                  "patient_seen": {
-                    "type": "string",
-                    "example": "123-13-1234"
-                  },
-                  "case_number": {
-                    "type": "string",
-                    "example": 20200723
-                  },
-                  "notes": {
-                    "type": "string",
-                    "example": "This is a patient note"
-                  },
-                  "provider_orders": {
-                    "type": "array",
-                    "items": {
-                      "anyOf": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "all_dates": {
+                            "admissions_face_sheet": {
                               "type": "integer",
                               "maximum": 1,
                               "minimum": 0,
                               "example": 0
                             },
-                            "service_start": {
-                              "type": "string",
-                              "format": "date",
-                              "example": "2001-01-01T00:00:00.000Z"
-                            },
-                            "service_end": {
-                              "type": "string",
-                              "format": "date",
-                              "example": "2023-01-01T00:00:00.000Z"
-                            },
-                            "provider_name": {
-                              "type": "string",
-                              "example": "My Provider Name"
-                            },
-                            "provider_address": {
-                              "type": "string",
-                              "example": "123 My Place, Peoria, IL 61605"
-                            },
-                            "certified_records": {
+                            "ambulance_records": {
                               "type": "integer",
                               "maximum": 1,
                               "minimum": 0,
-                              "example": 1
+                              "example": 0
                             },
-                            "rush_order": {
+                            "attending_physicians_statement": {
                               "type": "integer",
                               "maximum": 1,
                               "minimum": 0,
-                              "example": 1
+                              "example": 0
                             },
-                            "notes": {
-                              "type": "string",
-                              "example": "This is a provider note"
+                            "autopsy_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
                             },
-                            "record_types": {
-                              "type": "object",
-                              "properties": {
-                                "medical": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "lab": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "xrays": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "bills": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                }
-                              }
+                            "anethesia_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
                             },
-                            "medical_subtypes": {
-                              "type": "object",
-                              "properties": {
-                                "abstract_medical_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "admissions_face_sheet": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "ambulance_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "attending_physicians_statement": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "autopsy_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "anethesia_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "chart_stickers": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "consultation_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "discharge_summary": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "doctors_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "er_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "fetal_monitoring_strips": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "gastrointestinal_lab_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "history_physical_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "implant_explant_logs": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "intra_operative_nursing_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "laboratory_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "nurses_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "nurses_medication_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "office_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "operative_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "pathology_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "pharmacy_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "photographs": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "physical_therapy_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "preop_standing_orders": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "product_id_implant_label": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "psychiatric_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "radiology_diagnostic_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "recovery_room_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                }
-                              }
+                            "chart_stickers": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
                             },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "test.pdf"
-                                      },
-                                      "file_size": {
-                                        "type": "integer",
-                                        "example": 28900
-                                      },
-                                      "base_64": {
-                                        "type": "string",
-                                        "example": "data:@file/pdf;base64, base64"
-                                      },
-                                      "file_url": {
-                                        "type": "string",
-                                        "example": null
-                                      }
-                                    }
-                                  }
-                                ]
-                              }
+                            "consultation_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "discharge_summary": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "doctors_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "er_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "fetal_monitoring_strips": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "gastrointestinal_lab_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "history_physical_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "implant_explant_logs": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "intra_operative_nursing_notes": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "laboratory_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "nurses_notes": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "nurses_medication_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "office_notes": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "operative_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "pathology_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "pharmacy_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "photographs": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "physical_therapy_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "preop_standing_orders": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "product_id_implant_label": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "psychiatric_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "radiology_diagnostic_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "recovery_room_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
                             }
                           }
                         },
-                        {
+                        "authorizations": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "file_name": {
+                                  "type": "string",
+                                  "example": "test.pdf"
+                                },
+                                "file_size": {
+                                  "type": "integer",
+                                  "example": 28900
+                                },
+                                "base_64": {
+                                  "type": "string",
+                                  "example": "data:@file/pdf;base64, base64"
+                                },
+                                "file_url": {
+                                  "type": "string",
+                                  "example": null
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "all_dates": {
+                          "type": "integer",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "example": 0
+                        },
+                        "service_start": {
+                          "type": "string",
+                          "format": "date",
+                          "example": "2001-01-01T00:00:00.000Z"
+                        },
+                        "service_end": {
+                          "type": "string",
+                          "format": "date",
+                          "example": "2023-01-01T00:00:00.000Z"
+                        },
+                        "provider_name": {
+                          "type": "string",
+                          "example": "My Provider Name"
+                        },
+                        "provider_address": {
+                          "type": "string",
+                          "example": "123 My Place, Peoria, IL 61605"
+                        },
+                        "certified_records": {
+                          "type": "integer",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "example": 1
+                        },
+                        "rush_order": {
+                          "type": "integer",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "example": 1
+                        },
+                        "notes": {
+                          "type": "string",
+                          "example": "This is a provider note"
+                        },
+                        "record_types": {
                           "type": "object",
                           "properties": {
-                            "all_dates": {
+                            "medical": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 1
+                            },
+                            "lab": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 1
+                            },
+                            "xrays": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 1
+                            },
+                            "bills": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 1
+                            }
+                          }
+                        },
+                        "medical_subtypes": {
+                          "type": "object",
+                          "properties": {
+                            "abstract_medical_records": {
                               "type": "integer",
                               "maximum": 1,
                               "minimum": 0,
                               "example": 0
                             },
-                            "service_start": {
-                              "type": "string",
-                              "format": "date",
-                              "example": "2001-01-01T00:00:00.000Z"
-                            },
-                            "service_end": {
-                              "type": "string",
-                              "format": "date",
-                              "example": "2023-01-01T00:00:00.000Z"
-                            },
-                            "provider_name": {
-                              "type": "string",
-                              "example": "My Provider Name"
-                            },
-                            "provider_address": {
-                              "type": "string",
-                              "example": "123 My Place, Peoria, IL 61605"
-                            },
-                            "certified_records": {
+                            "admissions_face_sheet": {
                               "type": "integer",
                               "maximum": 1,
                               "minimum": 0,
-                              "example": 1
+                              "example": 0
                             },
-                            "rush_order": {
+                            "ambulance_records": {
                               "type": "integer",
                               "maximum": 1,
                               "minimum": 0,
-                              "example": 1
+                              "example": 0
                             },
-                            "notes": {
-                              "type": "string",
-                              "example": "This is a provider note"
+                            "attending_physicians_statement": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
                             },
-                            "record_types": {
-                              "type": "object",
-                              "properties": {
-                                "medical": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "lab": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "xrays": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                },
-                                "bills": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 1
-                                }
-                              }
+                            "autopsy_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
                             },
-                            "medical_subtypes": {
-                              "type": "object",
-                              "properties": {
-                                "abstract_medical_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "admissions_face_sheet": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "ambulance_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "attending_physicians_statement": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "autopsy_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "anethesia_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "chart_stickers": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "consultation_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "discharge_summary": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "doctors_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "er_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "fetal_monitoring_strips": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "gastrointestinal_lab_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "history_physical_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "implant_explant_logs": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "intra_operative_nursing_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "laboratory_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "nurses_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "nurses_medication_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "office_notes": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "operative_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "pathology_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "pharmacy_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "photographs": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "physical_therapy_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "preop_standing_orders": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "product_id_implant_label": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "psychiatric_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "radiology_diagnostic_reports": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                },
-                                "recovery_room_records": {
-                                  "type": "integer",
-                                  "maximum": 1,
-                                  "minimum": 0,
-                                  "example": 0
-                                }
-                              }
+                            "anethesia_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
                             },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "test.pdf"
-                                      },
-                                      "file_size": {
-                                        "type": "integer",
-                                        "example": 28900
-                                      },
-                                      "base_64": {
-                                        "type": "string",
-                                        "example": "data:@file/pdf;base64, base64"
-                                      },
-                                      "file_url": {
-                                        "type": "string",
-                                        "example": null
-                                      }
-                                    },
-                                    "required": ["file_name", "file_size"]
-                                  }
-                                ]
-                              }
+                            "chart_stickers": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "consultation_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "discharge_summary": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "doctors_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "er_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "fetal_monitoring_strips": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "gastrointestinal_lab_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "history_physical_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "implant_explant_logs": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "intra_operative_nursing_notes": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "laboratory_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "nurses_notes": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "nurses_medication_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "office_notes": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "operative_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "pathology_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "pharmacy_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "photographs": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "physical_therapy_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "preop_standing_orders": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "product_id_implant_label": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "psychiatric_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "radiology_diagnostic_reports": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
+                            },
+                            "recovery_room_records": {
+                              "type": "integer",
+                              "maximum": 1,
+                              "minimum": 0,
+                              "example": 0
                             }
                           }
+                        },
+                        "authorizations": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "file_name": {
+                                  "type": "string",
+                                  "example": "test.pdf"
+                                },
+                                "file_size": {
+                                  "type": "integer",
+                                  "example": 28900
+                                },
+                                "base_64": {
+                                  "type": "string",
+                                  "example": "data:@file/pdf;base64, base64"
+                                },
+                                "file_url": {
+                                  "type": "string",
+                                  "example": null
+                                }
+                              }
+                            }
+                          ]
                         }
-                      ]
+                      }
                     }
-                  }
+                  ]
                 }
               }
-            ]
-          }
+            }
+          ]
         }
       }
     }
   },
   "required": ["request", "key", "user_email", "payload"]
-},
-"newRetrieval_200_response": {
-  "type": "object",
-  "properties": {
-    "success": {
-      "type": "boolean",
-      "example": true
-    },
-    "payload": {
-      "type": "object",
-      "properties": {
-        "orders": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "example": 735451,
-                    "description": "order id of created order"
-                  },
-                  "provider_orders": {
-                    "type": "array",
-                    "items": {
-                      "anyOf": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "example": 944579,
-                              "description": "provider order id created"
-                            },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string",
-                                        "example": 3428904,
-                                        "description": "document id"
-                                      },
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "Test.pdf"
-                                      }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          }
-                        },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "example": 944579,
-                              "description": "provider order id created"
-                            },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string",
-                                        "example": 3428904,
-                                        "description": "document id"
-                                      },
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "Test.pdf"
-                                      }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "example": 735451,
-                    "description": "order id of created order"
-                  },
-                  "provider_orders": {
-                    "type": "array",
-                    "items": {
-                      "anyOf": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "example": 944579,
-                              "description": "provider order id created"
-                            },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string",
-                                        "example": 3428904,
-                                        "description": "document id"
-                                      },
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "Test.pdf"
-                                      }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          }
-                        },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "example": 944579,
-                              "description": "provider order id created"
-                            },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string",
-                                        "example": 3428904,
-                                        "description": "document id"
-                                      },
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "Test.pdf"
-                                      }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    "messages": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
-    },
-    "warnings": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
-    },
-    "errors": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
-    }
-  }
 }
     </code>
+
   </div>
 
   <div class='api_payload'>
-    <code>
+
+  <code>
 {
   "request": "newRetrieval",
   "key": "key",
@@ -1760,192 +938,76 @@
       "properties": {
         "orders": {
           "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "example": 735451,
-                    "description": "order id of created order"
-                  },
-                  "provider_orders": {
-                    "type": "array",
-                    "items": {
-                      "anyOf": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "example": 944579,
-                              "description": "provider order id created"
-                            },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string",
-                                        "example": 3428904,
-                                        "description": "document id"
-                                      },
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "Test.pdf"
-                                      }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          }
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": 735451,
+                  "description": "order id of created order"
+                },
+                "provider_orders": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "example": 944579,
+                          "description": "provider order id created"
                         },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "example": 944579,
-                              "description": "provider order id created"
-                            },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string",
-                                        "example": 3428904,
-                                        "description": "document id"
-                                      },
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "Test.pdf"
-                                      }
-                                    }
-                                  }
-                                ]
+                        "authorizations": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "example": 3428904,
+                                  "description": "document id"
+                                },
+                                "file_name": {
+                                  "type": "string",
+                                  "example": "Test.pdf"
+                                }
                               }
                             }
-                          }
+                          ]
                         }
-                      ]
+                      }
                     }
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "example": 735451,
-                    "description": "order id of created order"
-                  },
-                  "provider_orders": {
-                    "type": "array",
-                    "items": {
-                      "anyOf": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "example": 944579,
-                              "description": "provider order id created"
-                            },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string",
-                                        "example": 3428904,
-                                        "description": "document id"
-                                      },
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "Test.pdf"
-                                      }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          }
-                        },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "example": 944579,
-                              "description": "provider order id created"
-                            },
-                            "authorizations": {
-                              "type": "array",
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string",
-                                        "example": 3428904,
-                                        "description": "document id"
-                                      },
-                                      "file_name": {
-                                        "type": "string",
-                                        "example": "Test.pdf"
-                                      }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
+                  ]
                 }
               }
-            ]
-          }
+            }
+          ]
         }
       }
-    },
-    "messages": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
-    },
-    "warnings": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
-    },
-    "errors": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "example": []
     }
+  },
+  "messages": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "example": []
+  },
+  "warnings": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "example": []
+  },
+  "errors": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "example": []
   }
 }
     </code>
